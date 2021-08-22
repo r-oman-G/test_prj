@@ -48,15 +48,15 @@ class _Screen2State extends State<Screen2> {
                   'Section 2  (${value.itemsCount})',
                 ),
               ),
-              const _VerticalListVIewBuilder(),
+              const _VerticalListView(),
             ],
           ),
         ),
       );
 }
 
-class _VerticalListVIewBuilder extends StatelessWidget {
-  const _VerticalListVIewBuilder({
+class _VerticalListView extends StatelessWidget {
+  const _VerticalListView({
     Key? key,
   }) : super(key: key);
 
@@ -74,7 +74,7 @@ class _VerticalListVIewBuilder extends StatelessWidget {
               return const SizedBox.shrink();
             }
             return Padding(
-              padding: const EdgeInsets.only(top: 16),
+              padding: const EdgeInsets.only(top: _defaultPadding),
               child: _ItemCardWidget(
                 child: Text(itemAt),
                 itemType: _ItemCardType.vertical,
@@ -131,10 +131,10 @@ class _SectionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-        left: 16,
-        right: 16,
+        left: _defaultPadding,
+        right: _defaultPadding,
         top: 15.51,
-        bottom: 16,
+        bottom: _defaultPadding,
       ),
       child: Text(
         text,
@@ -169,7 +169,8 @@ class _ItemCardWidget extends StatelessWidget {
         height: 150,
         child: Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: itemType == _ItemCardType.horizontal ? 8 : 16,
+            // ignore: lines_longer_than_80_chars
+            horizontal: itemType == _ItemCardType.horizontal ? _defaultPadding / 2 : _defaultPadding,
           ),
           child: Card(
             elevation: 16,
