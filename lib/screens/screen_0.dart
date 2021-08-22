@@ -13,6 +13,7 @@ class Screen0 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
+    backgroundColor: Colors.white,
     body: Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
