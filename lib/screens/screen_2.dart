@@ -32,7 +32,7 @@ class _Screen2State extends State<Screen2> {
             shrinkWrap: true,
             children: [
               const Align(
-                alignment: Alignment.centerRight,
+                alignment: Alignment.topRight,
                 child: CloseButtonWidget(),
               ),
               Consumer<HorizontalItemsProvider>(
@@ -110,7 +110,7 @@ class _HorizontalPageView extends StatelessWidget {
             }
             return _ItemCardWidget(
               child: Text(itemAt),
-              itemType: _ItemCardType.vertical,
+              itemType: _ItemCardType.horizontal,
             );
           },
           controller: _horizontalPageController,
@@ -174,7 +174,7 @@ class _ItemCardWidget extends StatelessWidget {
           ),
           child: Card(
             elevation: 16,
-            color: Colors.red,
+            color: ProjectColor.white,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(
                 16,

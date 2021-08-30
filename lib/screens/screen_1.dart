@@ -40,7 +40,7 @@ class _Screen1State extends State<Screen1> {
                       children: const [
                         _TitleWidget(),
                         _SubtitleWidget(),
-                        _ContentWidget(),
+                        Flexible(child: _ContentWidget()),
                         _BottomButtonWidget(),
                       ],
 
@@ -144,20 +144,23 @@ class _ContentWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ColoredBox(
       color: HexColor("#E5E5E5"),
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(
-          maxHeight: 400,
-        ),
-        child: const Scrollbar(
-          isAlwaysShown: true,
-          child: Padding(
-            padding: EdgeInsets.only(
-              left: _defaultPadding,
-              right: _defaultPadding,
-              top: _defaultPadding,
-            ),
-            child: SingleChildScrollView(
-              child: Text(_contentText),
+      child: Flexible(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(
+            minHeight: 0,
+            maxHeight: 400,
+          ),
+          child: const Scrollbar(
+            isAlwaysShown: true,
+            child: Padding(
+              padding: EdgeInsets.only(
+                left: _defaultPadding,
+                right: _defaultPadding,
+                top: _defaultPadding,
+              ),
+              child: SingleChildScrollView(
+                child: Text(_contentText),
+              ),
             ),
           ),
         ),
